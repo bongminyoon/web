@@ -3,75 +3,253 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>BMworld Bootstrap Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      /* 전체 배경과 텍스트 */
+      body {
+        background-color: #f3f4f6;
+        color: #444;
+        font-family: Arial, sans-serif;
+      }
+
+      /* 네비게이션 바 */
+      .navbar {
+        background-color: #212529;
+        padding: 1rem;
+      }
+
+      .navbar-brand, .nav-link {
+        color: #ffffff !important;
+        font-weight: bold;
+      }
+
+      .nav-link:hover {
+        color: #d3d3d3 !important;
+      }
+
+      /* 헤더 스타일 */
+      header {
+        background: linear-gradient(120deg, #6f42c1, #b23cfd);
+        color: #ffffff;
+        padding: 5rem 1rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      header p {
+        font-size: 1.25rem;
+      }
+
+      /* 캐러셀 스타일 */
+      .carousel-inner img {
+        height: 500px;
+        object-fit: contain;
+        background-color: #000; /* 이미지 여백을 검은색으로 채움 */
+      }
+
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 1.2rem;
+        border-radius: 8px;
+      }
+
+      /* 카드 스타일 */
+      .card-group .card {
+        margin: 1rem;
+      }
+
+      /* 작은 카드 이미지 크기 */
+      .small-card-img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin: 0 auto; /* 이미지 가운데 정렬 */
+      }
+
+      /* Scroll to Top 버튼 */
+      .scroll-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #6f42c1;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        display: none;
+        cursor: pointer;
+      }
+
+      /* 푸터 스타일 */
+      footer {
+        background-color: #212529;
+        color: #f8f9fa;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: #b8daff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #f8f9fa;
+      }
+    </style>
   </head>
   <body>
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">1030</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">BMworld</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
         </div>
-      </nav>
-      
-    <h1>Hello, world!</h1>
-    <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-primary" type="button">Button</button>
-        <button class="btn btn-primary" type="button">Button</button>
       </div>
-      <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="D:\bong\web\1030\images\1.jfif" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="D:\bong\web\1030\images\2.jfif" class="d-block w-100" alt="...">
+    </nav>
+    
+    <!-- 헤더 -->
+    <header>
+      <div class="container">
+        <h1>Welcome to Bongmin World</h1>
+        <p></p>
+      </div>
+    </header>
 
-          </div>
-          <div class="carousel-item">
-            <img src="D:\bong\web\1030\images\1.jfif" class="d-block w-100" alt="...">
+    <!-- 캐러셀 -->
+    <div id="carouselExample" class="carousel slide mb-5">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA3MjVfMjA3%2FMDAxNzIxOTEzNzk1ODE1.cA3SnPXFgsZPGYdu4gss3k9K2CdkNwGeniUJfXaW-fgg.8AIJJKMLFJAU3oGBJ53kwc89uIK5g_JfAK3NvYUo7E8g.JPEG%2FSeul_%25C3%25D6%25BF%25B9%25B3%25AA_%25C6%25D2%25C4%25DCvcr_12.jpg&type=ofullfill340_600_png" class="d-block w-100" alt="NewJeans Image 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>yena</h5>
+            <p>cute</p>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAyMDZfMjcw%2FMDAxNjEyNjE0OTY1NTI3.aFRc-HijOlZtMixAVaMhsyBzqaK6hQzCNsb1dCw5s9kg.fxDwcnu_W-45sQmV9qktzf_KnxQRpxZl8OiE6iU_pjYg.PNG.ldh3178%2F14.PNG&type=a340" class="d-block w-100" alt="NewJeans Image 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>yena</h5>
+            <p>cute</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MDhfMjA0%2FMDAxNjYyNjQ1NTU0Njg0.csRXuNiLI9XDd3LLDRYU0LxJ9BfVR3QMs9yuY_TmhtQg.Km49DmwtO7aLlRsAcH6lpI8tX0MY4VTJzjBZQrb190cg.JPEG.nwowolf%2FFcIzcY3aAAExqR9.jpg&type=a340" class="d-block w-100" alt="NewJeans Image 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>yena</h5>
+            <p>cute</p>
+          </div>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- 카드 레이아웃 -->
+    <div class="container mb-5">
+      <h2 class="text-center mb-4">My Page</h2>
+      <div class="card-group">
+        <div class="card">
+          <img src="https://search.pstatic.net/sunny?src=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&type=f30_30_png_expire24" class="card-img-top small-card-img" alt="Service 1">
+          <div class="card-body">
+            <h5 class="card-title">GitHub</h5>
+            <p class="card-text">Welcome to GitHub</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Visit</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fstatic.cdninstagram.com%2Frsrc.php%2Fy4%2Fr%2FQaBlI0OZiks.ico&type=f30_30_png_expire24" class="card-img-top small-card-img" alt="Service 2">
+          <div class="card-body">
+            <h5 class="card-title">Instagram</h5>
+            <p class="card-text">Welcome to Instagram</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Visit</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://search.pstatic.net/sunny?src=https%3A%2F%2Fabs.twimg.com%2Ffavicons%2Ftwitter.3.ico&type=f30_30_png_expire24" class="card-img-top small-card-img" alt="Service 3">
+          <div class="card-body">
+            <h5 class="card-title">X</h5>
+            <p class="card-text">Welcome to X</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Visit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">More Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Detailed information about the selected service or feature.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+      <p>© 2024 BMworld Page - All rights reserved | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Scroll to Top 버튼 -->
+    <div class="scroll-top" onclick="scrollToTop()">↑</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      // Scroll to Top 기능
+      window.onscroll = function() {
+        if (document.documentElement.scrollTop > 100) {
+          document.querySelector('.scroll-top').style.display = "block";
+        } else {
+          document.querySelector('.scroll-top').style.display = "none";
+        }
+      };
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    </script>
   </body>
 </html>
